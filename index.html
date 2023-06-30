@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>job freak assignment</title>
+  <style>
+    /* CSS for the side navigation */
+    .side-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 20%;
+      background-color: #f1f1f1;
+      height: 100vh;
+    }
+
+    /* CSS for the content area */
+    .content {
+      margin-left: 20%;
+      padding: 20px;
+    }
+
+    /* Styling for the side navigation */
+    .side-nav ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .side-nav li {
+      list-style-type: none;
+      padding: 10px;
+    }
+
+    .side-nav a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+      padding: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .side-nav a:hover {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Side Navigation -->
+    <div class="side-nav">
+      <ul>
+        <li><a href="#" onclick="showContent('home')">Home</a></li>
+        <li><a href="#" onclick="showContent('contact')">Contact</a></li>
+        <li><a href="#" onclick="showContent('information')">Information</a></li>
+        <li><a href="#" onclick="showContent('guide')">Guide</a></li>
+      </ul>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content" id="content">
+      <h2>Welcome to the website!</h2>
+      <p>Select an option from the side navigation to see more content.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript to handle content switching -->
+  <script>
+    function showContent(page) {
+      var contentDiv = document.getElementById('content');
+      switch (page) {
+        case 'home':
+          contentDiv.innerHTML = '<h2>Home</h2><p>This is the home page content.</p>';
+          break;
+        case 'contact':
+          contentDiv.innerHTML = '<h2>Contact</h2><p>This is the contact information.</p>';
+          break;
+        case 'information':
+          contentDiv.innerHTML = '<h2>Information</h2><p>This is some information.</p>';
+          break;
+        case 'guide':
+          contentDiv.innerHTML = '<h2>Guide</h2><p>This is the guide content.</p>';
+          break;
+        default:
+          contentDiv.innerHTML = '<h2>Welcome to the website!</h2><p>Select an option from the side navigation to see more content.</p>';
+      }
+    }
+  </script>
+</body>
+</html>
